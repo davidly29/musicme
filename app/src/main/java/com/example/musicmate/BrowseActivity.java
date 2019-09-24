@@ -2,21 +2,21 @@ package com.example.musicmate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class BrowseActivity extends AppCompatActivity {
-    TextView tv;
 
-    String nameValue ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
-        tv.findViewById(R.id.textView);
 
-        nameValue = getIntent().getExtras().getString("Value");
+        Intent intent = getIntent();
+        String nameValue = intent.getStringExtra("Name");
+        TextView tv = (TextView) findViewById(R.id.textView);
         tv.setText(nameValue);
 
     }
