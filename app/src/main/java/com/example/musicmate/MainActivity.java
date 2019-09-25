@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Button goToSecond;
     String name;
 
     EditText username;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         goToSecond = (Button) findViewById(R.id.button);
         username = (EditText) findViewById(R.id.username);
-
+        Toast.makeText(MainActivity.this, "App Connected", Toast.LENGTH_LONG).show();
 
         goToSecond.setOnClickListener(new View.OnClickListener() {
         @Override
